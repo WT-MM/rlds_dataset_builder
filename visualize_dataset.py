@@ -27,8 +27,9 @@ else:
 
 # create TF dataset
 dataset_name = args.dataset_name
+
+# dataset should (by default) be located in ~/tensorflow_datasets/
 print(f"Visualizing data from dataset: {dataset_name}")
-module = importlib.import_module(dataset_name)
 ds = tfds.load(dataset_name, split='train')
 ds = ds.shuffle(100)
 
